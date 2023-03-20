@@ -1,0 +1,214 @@
+
+
+<div class="container">
+  <header class="header">
+    <h1 id="title" class="text-center">Formulaire de formation </h1>
+    <p id="description" class="description text-center">
+      Aider nous à améliorer le contenu de nos programme de formation
+    </p>
+  </header>
+  <form id="Multiplex">
+    <div class="form-group">
+      <label id="name-label" for="name">Nom</label>
+      <input
+        type="text"
+        name="Nom"
+        id="Nom"
+        class="form-control"
+        placeholder="Entrer votre Nom"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label id="email-label" for="e-mail">E-mail</label>
+      <input
+        type="e-mail"
+        name="e-mail"
+        id="e-mail"
+        class="form-control"
+        placeholder="Entrer votre E-mail"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label id="nombre-label" for="nombre"
+        >Age<span class="clue">(optionel)</span></label
+      >
+      <input
+        type="nombre"
+        name="age"
+        id="nombre"
+        min="10"
+        max="99"
+        class="form-control"
+        placeholder="Age"
+      />
+    </div>
+    <div class="form-group">
+      <p>Quelle est votre situation sociale </p>
+      <select id="dropdown" name="role" class="form-control" required>
+        <option disabled selected value>choisissez votre profil</option>
+        <option value="étudiant">Etudiant</option>
+        <option value="métier">Travailleur à plein temps</option>
+        <option value="Apprenant">Apprenant </option>
+        <option value="preferNR">Préfère ne rien dire</option>
+        <option value="autre">autres</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <p>Allez-vous récommander notre plate-forme à vos amis?</p>
+      <label>
+        <input
+          name="recommandé par les utilisateurs"
+          value="Definitivement"
+          type="radio"
+          class="input-radio"
+          checked
+        />Surement</label
+      >
+      <label>
+        <input
+          name="recommandé par les utilisateurs"
+          value="peut-être"
+          type="radio"
+          class="input-radio"
+        />peut-être</label
+      >
+
+      <label
+        ><input
+          name="recommandé par les utilisateurs"
+          value="pas sûr"
+          type="radio"
+          class="input-radio"
+        />pas sûr</label
+      >
+    </div>
+
+    <div class="form-group">
+      <p>
+        Quelles sont vos sujets de formations préférés?
+      </p>
+      <select id="most-like" name="mostLike" class="form-control" required>
+        <option disabled selected value>Sélectionnez une option</option>
+        <option value="Programmation python">Programmation python</option>
+        <option value="Analyse de donnée avec Rstudio">Analyse de donnée avec Rstudio</option>
+        <option value="Sciences de l'Information Géographique (QGIS, Arcgis)">Sciences de l'Information Géographique (QGIS, Arcgis)</option>
+        <option value="Traitement d'images">Traitement d'images</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <p>
+        Qu'est-ce que vous aimeriez voir amélioré ?
+        <span class="indice">(Cochez toutes les cases qui s'appliquent)</span>
+      </p>
+
+      <label
+        ><input
+          name="préférance"
+          value="projets d'étude"
+          type="checkbox"
+          class="input-checkbox"
+        />projets de base</label
+      >
+      <label>
+        <input
+          name="préférance"
+          value="Géomatiques"
+          type="checkbox"
+          class="input-checkbox"
+        />Géomatiques</label
+      >
+      <label
+        ><input
+          name="préférance"
+          value="visualisation de données"
+          type="checkbox"
+          class="input-checkbox"
+        />visualisation de données</label
+      >
+      <label
+        ><input
+          name="préférance"
+          value="Shell bash"
+          type="checkbox"
+          class="input-checkbox"
+        />Shell bash</label
+      >
+      <label
+        ><input
+          name="préférance"
+          value="Programmation web"
+          type="checkbox"
+          class="input-checkbox"
+        />Programmation web</label
+      >
+      <label
+        ><input
+          name="préférance"
+          value="Télédétection"
+          type="checkbox"
+          class="input-checkbox"
+        />Télédétection</label
+      >
+      <label
+        ><input
+          name="préférance"
+          value="videos"
+          type="checkbox"
+          class="input-checkbox"
+        />Videos</label
+      >
+      <label
+        ><input
+          name="préférance"
+          value="Rencontres universitaires"
+          type="checkbox"
+          class="input-checkbox"
+        />Rencontres universitaires</label
+      >
+      <label
+        ><input
+          name="préférance"
+          value="wiki"
+          type="checkbox"
+          class="input-checkbox"
+        />Wiki</label
+      >
+      <label
+        ><input
+          name="préférance"
+          value="forume"
+          type="checkbox"
+          class="input-checkbox"
+        />Forume</label
+      >
+      <label
+        ><input
+          name="préférance"
+          value="additional-courses"
+          type="checkbox"
+          class="input-checkbox"
+        />Cours supplémentaires</label
+      >
+    </div>
+
+    <div class="form-group">
+      <p>Des commentaires ou des suggestions ?</p>
+      <textarea
+        id="commentaires"
+        class="input-textarea"
+        name="commentaire"
+        placeholder="Entrer votre commentaire ici..."
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <button type="Envoyer" id="Envoyer" class="submit-button">
+        Envoyer
+      </button>
+    </div>
+  </form>
+</div>
