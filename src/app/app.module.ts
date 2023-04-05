@@ -8,17 +8,22 @@ import { FormationComponent } from './formation/formation.component';
 import { NotificationComponent } from './notification/notification.component';
 import { UserComponent } from './user/user.component';
 import { StageComponent } from './stage/stage.component';
-import { EvenementComponent } from './evenement/evenement.component';
 
-import { FormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
+import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
+
 import { HomComponent } from './hom/hom.component';
 import { EmployerComponent } from './employer/employer.component';
 import { StagiaireComponent } from './stagiaire/stagiaire.component';
+import { CoursComponent } from './cours/cours.component';
+import { FormateurComponent } from './formateur/formateur.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ApiServiceComponent } from './api.service/api.service.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
+  AppComponent,
 
     DashboardComponent,
     FormationComponent,
@@ -26,11 +31,16 @@ import { StagiaireComponent } from './stagiaire/stagiaire.component';
     NotificationComponent,
     UserComponent,
     StageComponent,
-    EvenementComponent,
-    LoginComponent,
+
     HomComponent,
     EmployerComponent,
     StagiaireComponent,
+    CoursComponent,
+    FormateurComponent,
+    LoginComponent,
+    RegisterComponent,
+    ApiServiceComponent,
+
 
     
   ],
@@ -38,7 +48,10 @@ import { StagiaireComponent } from './stagiaire/stagiaire.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

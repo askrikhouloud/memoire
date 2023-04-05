@@ -1,57 +1,50 @@
-import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
 
+import { Injectable, Output, EventEmitter } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { Users } from './users';
 
 @Injectable({
-  providedIn: 'root'
+providedIn: 'root'
 })
 
-export class AuthService {
-
-  private apiUrl = 'http://localhost:8000/api/login'; // URL de votre serveur PHP pour la connexion
-
-  constructor(private http: HttpClient) { }
-
-  login(username: string, password: string) {
-    const body = {username: username, password: password};
-    return this.http.post<any>(this.apiUrl, body);
-  }
+export class ApiService {
+redirectUrl: string | undefined;
+baseUrl:string = "https://platformeapp.000webhostapp.com/platformeUF/db.php";
+@Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
+constructor(private httpClient : HttpClient) { }
+public userlogin(username: any, password: any) {
+alert(username)
+return this.httpClient.post<any>(this.baseUrl + '/login.php', { username, password })
+.pipe(map(Users => {
+this.setToken(Users[0].name);
+this.getLoggedInName.emit(true);
+return Users;
+}));
 }
 
-export class AuthGuard implements CanActivate {
-
-  constructor(private router: Router) {}
-
-  canActivate(): boolean {
-    if (localStorage.getItem('token')){
-      return true;
-    } else {
-      this.router.navigate(['login']);
-      return false;
-    }
-  }
-
+public userregistration(name: any,email: any,pwd: any) {
+return this.httpClient.post<any>(this.baseUrl + '/register.php', { name,email, pwd })
+.pipe(map(Users => {
+return Users;
+}));
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//token
+setToken(token: string) {
+localStorage.setItem('token', token);
+}
+getToken() {
+return localStorage.getItem('token');
+}
+deleteToken() {
+localStorage.removeItem('token');
+}
+isLoggedIn() {
+const usertoken = this.getToken();
+if (usertoken != null) {
+return true
+}
+return false;
+}
+}

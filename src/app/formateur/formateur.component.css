@@ -1,0 +1,5 @@
+.row > div {
+    background-color: #0c76df4a;
+ 
+    box-shadow: inset 1px -1px 1px gray, inset -1px 1px 1px gray;
+}
