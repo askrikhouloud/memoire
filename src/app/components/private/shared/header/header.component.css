@@ -1,0 +1,10 @@
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 17px;
+
+  float: left;
+  width: 130%;
+  background: #f1f1f1;
+  border-radius: 1cm;
+}

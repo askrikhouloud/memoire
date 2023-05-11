@@ -1,0 +1,13 @@
+
+
+.alert {
+  font-size: 29px;
+}
+
+.bg-login-image {
+  background: url(./../../../../assets/Login.png) no-repeat;
+  background-position-y: center;
+
+  background-size: contain;
+}
+

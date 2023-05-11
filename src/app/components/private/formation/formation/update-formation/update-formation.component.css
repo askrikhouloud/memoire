@@ -1,0 +1,44 @@
+@import url(https://unpkg.com/@webpixels/css@1.1.5/dist/index.css);
+
+/* Bootstrap Icons */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.0/font/bootstrap-icons.min.css");
+
+.navbar-nav {
+  margin-top: 10%;
+}
+
+
+.header-menu-img {
+  display: block;
+  line-height: -76px;
+  font-size: 50px;
+  transition: background 0.3s;
+  color: #69aae0;
+}
+
+.mx-n1 a btn d-inline-flex btn-sm btn-primary mx-1 {
+  padding: 0 27px;
+  display: block;
+  line-height: -76px;
+  font-size: 50px;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  margin-left: -700px;
+  color: #2394be;
+  background-color: rgb(255, 162, 0);
+}
+.nav-link {
+  display: block;
+  font-size: 15px;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+
+.bi.bi-trash{
+    color: red;
+}
+
+
+nav{
+  width: 100%;
+}

@@ -1,48 +1,64 @@
-
-import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { FormationComponent } from './formation/formation.component';
-import { LoginComponent} from './login/login.component';
-import { NotificationComponent } from './notification/notification.component';
-import { UserComponent } from './user/user.component';
-import { StageComponent } from './stage/stage.component';
-import { CoursComponent} from './cours/cours.component';
-import { AdminComponent } from './admin/admin.component';
-import { HomComponent } from './hom/hom.component';
-import { AuthService } from './auth.service';
-import { EmployerComponent } from './employer/employer.component';
-import { StagiaireComponent } from './stagiaire/stagiaire.component';
-import { FormateurComponent } from './formateur/formateur.component';
-import { RegisterComponent} from './register/register.component';
+import { RouterModule, Routes } from '@angular/router';
+
+import { DashboardComponent } from './components/private/dashboard/dashboard.component';
+
+import { LoginComponent } from './components/public/login/login.component';
+import { NotificationComponent } from './components/private/notification/notification.component';
+import { StageComponent } from './components/private/stage/stage.component';
+
+import { AdminComponent } from './components/private/admin/admin.component';
+
+import { EmployerComponent } from './components/private/employer/employer.component';
+import { StagiaireComponent } from './components/private/stagiaire/stagiaire.component';
+import { FormateurComponent } from './components/private/formateur/formateur.component';
+
+import { AllUsersComponent } from './components/private/users/all-users/all-users.component';
+import { UpdateUserComponent } from './components/private/users/update-user/update-user.component';
+import { HomeComponent } from './components/public/home/home.component';
+import { AuthGuard } from './guards/auth.guard';
+
+
+import { AddFormationComponent } from './components/private/formation/formation/add-formation/add-formation.component';
+import { ListFormationComponent } from './components/private/formation/formation/list-formation/list-formation.component';
+import { UpdateFormationComponent } from './components/private/formation/formation/update-formation/update-formation.component';
+
+
+
+
 
 
 
 const routes: Routes = [
-  
-  {path:'',component:LoginComponent},
+  { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
-  {path:'hom',component:HomComponent},
-  {path:'dashboard',component:DashboardComponent },
-  {path:'formation',component:FormationComponent},
-  {path:'notification',component:NotificationComponent},
-  {path:'user',component:UserComponent},
-  {path:'stage',component:StageComponent },
-  {path:'admin',component:AdminComponent},
-  {path:'register',component:RegisterComponent},
-  {path:'employer',component:EmployerComponent},
-  {path:'stagiaire',component:StagiaireComponent},
-  {path:'cours',component:CoursComponent},
-  {path:'formateur',component:FormateurComponent},
+  { path: 'home', component: HomeComponent },
+  { path: 'dashboard', component: DashboardComponent ,canActivate: [AuthGuard]},
+  { path: 'users', component: AllUsersComponent ,canActivate: [AuthGuard]},
+  { path: 'update-user/:id', component: UpdateUserComponent ,canActivate: [AuthGuard]},
+
  
+
+
+  { path: 'formateur', component: FormateurComponent  },
+  
+  { path: 'notification', component: NotificationComponent },
+
+
+  { path: 'stage', component: StageComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'employer', component: EmployerComponent },
+  { path: 'stagiaire', component: StagiaireComponent },
+
+  { path: 'list-formation', component: ListFormationComponent ,canActivate: [AuthGuard]},
+  { path: 'update-formation/:id', component: UpdateFormationComponent ,canActivate: [AuthGuard]},
+  { path: 'add-formation', component: AddFormationComponent ,canActivate: [AuthGuard]},
+  
 ];
 
 @NgModule({
- 
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [AuthService],
-
-  
+  providers: [],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

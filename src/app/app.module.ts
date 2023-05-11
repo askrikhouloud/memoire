@@ -1,59 +1,73 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { FormationComponent } from './formation/formation.component';
-import { NotificationComponent } from './notification/notification.component';
-import { UserComponent } from './user/user.component';
-import { StageComponent } from './stage/stage.component';
+import { DashboardComponent } from './components/private/dashboard/dashboard.component';
+import { FormationComponent } from './components/private/formation/formation.component';
+import { NotificationComponent } from './components/private/notification/notification.component';
+import { StageComponent } from './components/private/stage/stage.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EmployerComponent } from './components/private/employer/employer.component';
+import { StagiaireComponent } from './components/private/stagiaire/stagiaire.component';
 
-import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
+import { FormateurComponent } from './components/private/formateur/formateur.component';
+import { LoginComponent } from './components/public/login/login.component';
 
-import { HomComponent } from './hom/hom.component';
-import { EmployerComponent } from './employer/employer.component';
-import { StagiaireComponent } from './stagiaire/stagiaire.component';
-import { CoursComponent } from './cours/cours.component';
-import { FormateurComponent } from './formateur/formateur.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { ApiServiceComponent } from './api.service/api.service.component';
+import { AllUsersComponent } from './components/private/users/all-users/all-users.component';
+
+import { HeaderComponent } from './components/private/shared/header/header.component';
+
+import { HomeComponent } from './components/public/home/home.component';
+import { UpdateUserComponent } from './components/private/users/update-user/update-user.component';
+
+import { AddFormationComponent } from './components/private/formation/formation/add-formation/add-formation.component';
+import { ListFormationComponent } from './components/private/formation/formation/list-formation/list-formation.component';
+import { UpdateFormationComponent } from './components/private/formation/formation/update-formation/update-formation.component';
+
+
 
 
 @NgModule({
   declarations: [
-  AppComponent,
+    AppComponent,
 
     DashboardComponent,
     FormationComponent,
 
     NotificationComponent,
-    UserComponent,
+
     StageComponent,
 
-    HomComponent,
     EmployerComponent,
     StagiaireComponent,
-    CoursComponent,
+ 
     FormateurComponent,
     LoginComponent,
-    RegisterComponent,
-    ApiServiceComponent,
 
+    AllUsersComponent,
+    UpdateUserComponent,
+    HeaderComponent,
 
+    HomeComponent,
     
+
+ 
+
+    AddFormationComponent,
+    ListFormationComponent,
+    UpdateFormationComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     AppRoutingModule,
+
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    
-
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule {  }
+export class AppModule {}

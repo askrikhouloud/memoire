@@ -1,0 +1,78 @@
+<div class="bg-gradient-light public-pages-padding">
+   
+    <div class="container mt-4">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-5  col-md-15">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-1">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                        <div class="lo">
+                            <img src="assets/lo.png"> 
+                        </div> 
+                            <div class="col-lg-10">
+                                
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <br>
+                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                    </div>
+                                    <form [formGroup]="loginForm" (ngSubmit)="loginUser()" class="user">
+                                        <div class="form-group my-2">
+                                            <label for="exampleInputEmail1">Email address :</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail"
+                                                formControlName="email" aria-describedby="emailHelp"
+                                                placeholder="Enter Email Address...">
+                                            <div *ngIf="email?.touched && email?.invalid">
+                                                <small class="text-danger" *ngIf=" email?.errors?.['required']">e-mail
+                                                    est obligatoire</small>
+                                                <small class="text-danger" *ngIf="email?.errors?.['email']">e-mail est
+                                                    inccorect</small>
+                                            </div>
+                                        </div>
+                                        <div class="form-group my-3">
+                                            <label for="exampleInputPassword1">Password :</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword"
+                                                formControlName="password" placeholder="Password">
+                                            <div *ngIf="password?.touched && password?.invalid">
+                                                <small class="text-danger" *ngIf="password?.errors?.['required']">mot de
+                                                    passe
+                                                    est obligatoire</small>
+                                                <small class="text-danger"
+                                                    *ngIf="password?.errors?.['minlength']">minuim 6 caractéres
+                                                </small>
+                                            </div>
+
+                                        </div>
+
+                                        <button class="btn btn-primary" type="submit">
+                                            Login
+                                        </button>
+                                     
+                                        
+                                    
+                                    
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="#">Forgot Password?</a>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
